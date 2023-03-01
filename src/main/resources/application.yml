@@ -1,0 +1,22 @@
+server:
+  port: 8082
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/axm_car_service
+    password:
+    username: root
+
+
+  jpa:
+    show.sql: true
+    hibernate:
+     ddl-auto: update
+    properties:
+     hbm2ddl.auto: create
+     hibernate:
+       dialect: org.hibernate.dialect.MySQL8Dialect
+
+jwt:
+  secret: 'ewhifvbbefvetfvgbuejsfvpeoi9fvu8hefbijlkmrowetu8jewo[9fi0wu8dfjskoir9u8e'

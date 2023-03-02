@@ -1,4 +1,4 @@
-package com.anaxim.axmCarService.user.dto;
+package com.anaxim.axmCarService.security.utils;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,6 +1,5 @@
-package com.anaxim.axmCarService.service.serviceImpl;
+package com.anaxim.axmCarService.security.utils;
 
-import com.anaxim.axmCarService.service.serviceInterface.AxmUserService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

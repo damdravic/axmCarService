@@ -4,7 +4,7 @@ import com.anaxim.axmCarService.security.costant.SecurityConstant;
 import com.anaxim.axmCarService.security.filters.JwtAccessDeniedHandler;
 import com.anaxim.axmCarService.security.filters.JwtAuthenticationEntryPoint;
 import com.anaxim.axmCarService.security.filters.JwtAuthorizationFilter;
-import com.anaxim.axmCarService.service.serviceImpl.AxmUserDetailsService;
+import com.anaxim.axmCarService.security.utils.AxmUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

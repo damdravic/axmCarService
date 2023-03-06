@@ -1,4 +1,4 @@
-package com.anaxim.axmCarService.security.costant;
+package com.anaxim.axmCarService.security.constant;
 
 public class SecurityConstant {
 
@@ -10,7 +10,7 @@ public class SecurityConstant {
     public static final String ANAXIMEL = "Anaximel,SRL";
     public static final String ANAXIMEL_ADMINISTRATION = "User Management portal";
     public static final String AUTHORITIES = "Authorities";
-    public static final String[] PUBLIC_URLS = {"/users/login","/user/register"};
+    public static final String[] PUBLIC_URLS = {"/auth/login","/auth/register","/auth/add"};
     public static final String ACCESS_DENIED_MESSAGE = "You do not have access to this page";
 
     public static final String FORBIDDEN_MESSAGE="You need to log in to access this page";

@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="user")
@@ -17,29 +18,33 @@ public class User implements Serializable {
     private Long id;
     private int userCode;
     private String firstName;
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     private String lastName;
     private String username;
     private String email;
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    //@JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String password;
     private String profileImageUrl;
     private Date joinDate;
     private Date lastLoginDate;
     private Date lastLoginDateDisplayed;
     private String profession;
-    private String[] roles;
+    private List<String> roles;
     private boolean isActive;
     private boolean isNotLocked;
 
+    public User() {
+    }
+
+    public User(String firstName, String lastName, String username, String email, String password, String profession) {
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.profession = profession;
+
+    }
 
     public Long getId() {
         return id;
@@ -52,6 +57,16 @@ public class User implements Serializable {
     public int getUserCode() {
         return userCode;
     }
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
 
     public void setUserCode(int userCode) {
         this.userCode = userCode;
@@ -129,11 +144,11 @@ public class User implements Serializable {
         this.profession = profession;
     }
 
-    public String[] getRoles() {
+    public List<String> getRoles() {
         return roles;
     }
 
-    public void setRoles(String[] roles) {
+    public void setRoles(List<String> roles) {
         this.roles = roles;
     }
 
@@ -151,5 +166,27 @@ public class User implements Serializable {
 
     public void setNotLocked(boolean notLocked) {
         isNotLocked = notLocked;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userCode=" + userCode +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", profileImageUrl='" + profileImageUrl + '\'' +
+                ", joinDate=" + joinDate +
+                ", lastLoginDate=" + lastLoginDate +
+                ", lastLoginDateDisplayed=" + lastLoginDateDisplayed +
+                ", profession='" + profession + '\'' +
+                ", roles=" + roles +
+                ", isActive=" + isActive +
+                ", isNotLocked=" + isNotLocked +
+                '}';
     }
 }

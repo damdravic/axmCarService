@@ -19,7 +19,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.anaxim.axmCarService.security.costant.SecurityConstant.*;
+import static com.anaxim.axmCarService.security.constant.SecurityConstant.*;
 import static java.util.Arrays.stream;
 
 

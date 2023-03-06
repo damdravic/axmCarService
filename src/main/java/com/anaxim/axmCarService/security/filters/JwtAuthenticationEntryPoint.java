@@ -13,7 +13,7 @@ import java.io.OutputStream;
 
 import static org.springframework.http.HttpStatus.FORBIDDEN;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-import static com.anaxim.axmCarService.security.costant.SecurityConstant.*;
+import static com.anaxim.axmCarService.security.constant.SecurityConstant.*;
 
 @Component
 public class JwtAuthenticationEntryPoint extends Http403ForbiddenEntryPoint {

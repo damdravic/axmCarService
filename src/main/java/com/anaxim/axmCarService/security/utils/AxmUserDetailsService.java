@@ -2,7 +2,7 @@ package com.anaxim.axmCarService.security.utils;
 
 import com.anaxim.axmCarService.model.User;
 import com.anaxim.axmCarService.repository.UserRepository;
-import com.anaxim.axmCarService.security.exceptions.ExceptionsHandling;
+import com.anaxim.axmCarService.exceptions.ExceptionsHandling;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,6 +1,9 @@
-package com.anaxim.axmCarService.security.securityResource;
+package com.anaxim.axmCarService.controller;
 
+import com.anaxim.axmCarService.dto.UserRegistrationDTO;
+import com.anaxim.axmCarService.exceptions.EmailExistException;
 import com.anaxim.axmCarService.model.User;
+import com.anaxim.axmCarService.exceptions.UsernameExistException;
 import com.anaxim.axmCarService.security.utils.JwtTokenProvider;
 import com.anaxim.axmCarService.security.utils.UserPrincipal;
 import com.anaxim.axmCarService.service.serviceInterface.UserService;
@@ -9,7 +12,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,14 +27,19 @@ public class SecurityResource {
 
     public AuthenticationManager authenticationManager;
     public JwtTokenProvider jwtTokenProvider;
+
     public UserService userService;
 
-     @Autowired
+    @Autowired
     public SecurityResource(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService) {
         this.authenticationManager = authenticationManager;
         this.jwtTokenProvider = jwtTokenProvider;
+
         this.userService = userService;
     }
+
+
+
 
     @PostMapping("/register")
     public String getTest() {
@@ -40,17 +47,14 @@ public class SecurityResource {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<User> add(@RequestParam("firstName") String firstName,
-                                    @RequestParam("lastName") String lastName,
-                                    @RequestParam("username") String username,
-                                    @RequestParam("email") String email,
-                                    @RequestParam("password") String password,
-                                    @RequestParam("profileImageUrl") String piu,
-                                    @RequestParam("profession") String profession) throws IOException {
-        User user = new User(firstName,lastName,username,email,password,profession);
-        userService.addNewUser(user);
+    public ResponseEntity<UserRegistrationDTO> add(
+            @RequestBody UserRegistrationDTO userRegistrationDTO) throws IOException, UsernameExistException, EmailExistException, IllegalAccessException {
+        //User user = new User(firstName,lastName,username,email,password,profession);
 
-        return new ResponseEntity<>(user,OK);
+        System.out.println(userRegistrationDTO);
+        userService.addNewUser(userRegistrationDTO);
+
+        return new ResponseEntity<>(userRegistrationDTO,OK);
 
     }
 

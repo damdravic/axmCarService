@@ -43,7 +43,36 @@ public class User implements Serializable {
         this.email = email;
         this.password = password;
         this.profession = profession;
+    }
 
+    public User(int userCode,
+                String firstName,
+                String lastName,
+                String username,
+                String email,
+                String password,
+                String profileImageUrl,
+                Date joinDate,
+                Date lastLoginDate,
+                Date lastLoginDateDisplayed,
+                String profession,
+                List<String> roles,
+                boolean isActive,
+                boolean isNotLocked) {
+        this.userCode = userCode;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.profileImageUrl = profileImageUrl;
+        this.joinDate = joinDate;
+        this.lastLoginDate = lastLoginDate;
+        this.lastLoginDateDisplayed = lastLoginDateDisplayed;
+        this.profession = profession;
+        this.roles = roles;
+        this.isActive = isActive;
+        this.isNotLocked = isNotLocked;
     }
 
     public Long getId() {
